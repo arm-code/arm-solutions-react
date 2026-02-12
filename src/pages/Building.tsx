@@ -11,16 +11,16 @@ export default function BuildingPage() {
 
                 <div className="space-y-8">
                     <h1 className="flex flex-col items-center gap-2 text-6xl font-black tracking-tighter text-foreground sm:text-8xl lg:text-9xl">
-                        <span>SPAyT</span>
-                        <span className="text-primary/90">NEXT GENERATIONS</span>
+                        <span>arm-solutions</span>
+                        <span className="text-primary/90">By alexis romero mendoza</span>
                     </h1>
 
                     <div className="mx-auto max-w-[700px] space-y-4">
                         <p className="text-xl font-semibold text-foreground/90 sm:text-2xl">
-                            Plataforma de Gestión Académica.
+                            Yo soy Alexis Romero Mendoza
                         </p>
                         <p className="text-base leading-relaxed text-muted-foreground/70">
-                            Estamos trabajando en la próxima generación de herramientas para el SPAyT. SPAyT Next Generations centraliza la gestión, el aprendizaje y la comunicación en un solo núcleo.
+                            La inteligencia sin disciplina solo es arrogancia decorativa
                         </p>
                     </div>
                 </div>
@@ -35,17 +35,16 @@ export default function BuildingPage() {
                     <div className="flex items-center gap-3 rounded-xl border border-border bg-card/40 px-5 py-2.5 backdrop-blur-lg shadow-sm">
                         <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
                         <code className="text-xs font-bold uppercase tracking-widest text-muted-foreground/80 font-mono">
-                            Entorno de Desarrollo // Next Gen v0.1.0
+                            Entorno de Desarrollo // arm-solutions v0.1.0
                         </code>
                     </div>
                 </div>
             </main>
 
             <footer className="absolute bottom-10 flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground/50">
-                <span className="font-bold text-foreground/40">Departamento de Tecnologías de la Información</span>
-                <span>Ing. Jose Miguel Pulido de la Rosa</span>
+
                 <span>Ing. Alexis Romero Mendoza</span>
-                <span>© 2026 Subsistema de Preparatoria Abierta y Telebachillerato del Estado de Chihuahua</span>
+                <span>© 2026 arm-solutions</span>
             </footer>
         </div>
     )

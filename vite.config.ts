@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: "/spayt-2026/",
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
