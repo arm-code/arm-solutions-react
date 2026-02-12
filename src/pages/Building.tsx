@@ -12,12 +12,12 @@ export default function BuildingPage() {
                 <div className="space-y-8">
                     <h1 className="flex flex-col items-center gap-2 text-6xl font-black tracking-tighter text-foreground sm:text-8xl lg:text-9xl">
                         <span>arm-solutions</span>
-                        <span className="text-primary/90">By alexis romero mendoza</span>
+                        {/* <span className="text-primary/90">By alexis romero mendoza</span> */}
                     </h1>
 
                     <div className="mx-auto max-w-[700px] space-y-4">
-                        <p className="text-xl font-semibold text-foreground/90 sm:text-2xl">
-                            Yo soy Alexis Romero Mendoza
+                        <p className="text-xl font-semibold italic text-foreground/90 sm:text-2xl">
+                            Yo Soy Alexis Romero Mendoza
                         </p>
                         <p className="text-base leading-relaxed text-muted-foreground/70">
                             "La inteligencia sin disciplina solo es arrogancia decorativa"
