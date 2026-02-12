@@ -36,7 +36,7 @@ jobs:
       - name: Subir archivos a .dist
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: './dist'
 
     deploy:
       needs: build_site
