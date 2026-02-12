@@ -1,38 +1,51 @@
-name: Deploy Front a Neubox
+name: Deploy To Github Pages
 
 on:
   push:
     branches:
       - main  # Se activa cuando subes cambios a la rama main
 
+permissions:
+  contents: read
+  pages: write
+  id-toke: write
+
 jobs:
-  build-and-deploy:
+  build_site:
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Obtener código
+      - name: Obtener código (Checkout)
         uses: actions/checkout@v4
 
-      - name: 🏗 Instalar pnpm
+      - name: Instalar pnpm
         uses: pnpm/action-setup@v3
         with:
           version: 9
 
-      - name: ⚙️ Instalar Node.js
+      - name: Instalar Node.js 
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: 📦 Instalar dependencias y compilar
+      - name: Instalar dependencias y compilar (build)
         run: |
           pnpm install
           pnpm build
 
-      - name: 🚀 Subir archivos a Neubox via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Subir archivos a .dist
+        uses: actions/upload-pages-artifact@v3
         with:
-          server: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          local-dir: ./dist/  # Sube solo lo que está en dist
-          server-dir: public_html/  # Asegúrate que sea la ruta correcta
+          path: ./dist
+
+    deploy:
+      needs: build_site
+      runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
+          
