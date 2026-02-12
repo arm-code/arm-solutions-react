@@ -20,7 +20,7 @@ export default function BuildingPage() {
                             Yo soy Alexis Romero Mendoza
                         </p>
                         <p className="text-base leading-relaxed text-muted-foreground/70">
-                            La inteligencia sin disciplina solo es arrogancia decorativa
+                            "La inteligencia sin disciplina solo es arrogancia decorativa"
                         </p>
                     </div>
                 </div>
