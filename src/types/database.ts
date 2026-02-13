@@ -5,5 +5,5 @@ export interface LogEntry {
   slug: string;
   content: string;
   category: 'Frontend' | 'Backend' | 'DevOps' | 'Database';
-  tags?: string[];
+  tags: string[];
 }
