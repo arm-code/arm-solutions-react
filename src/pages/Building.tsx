@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function BuildingPage() {
     return (
         <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background font-sans antialiased">
@@ -30,6 +32,13 @@ export default function BuildingPage() {
                         <div className="h-2 w-2 animate-bounce rounded-full bg-primary/40 [animation-duration:1s]"></div>
                         <div className="h-2 w-2 animate-bounce rounded-full bg-primary/60 [animation-delay:200ms] [animation-duration:1s]"></div>
                         <div className="h-2 w-2 animate-bounce rounded-full bg-primary/40 [animation-delay:400ms] [animation-duration:1s]"></div>
+                    </div>
+
+                    <div className="flex items-center gap-3 rounded-xl border border-border bg-card/40 px-5 py-2.5 backdrop-blur-lg shadow-sm">
+                        <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+                        <code className="text-xs font-bold uppercase tracking-widest text-muted-foreground/80 font-mono">
+                            <Link to="/log">Ver mi Bitácora Técnica</Link>
+                        </code>
                     </div>
 
                     <div className="flex items-center gap-3 rounded-xl border border-border bg-card/40 px-5 py-2.5 backdrop-blur-lg shadow-sm">
