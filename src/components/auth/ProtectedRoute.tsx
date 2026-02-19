@@ -1,9 +1,9 @@
 import { supabase } from "@/lib/supabase";
-import React, { useEffect, useState } from "react"
-import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { Navigate, Outlet } from "react-router-dom";
 
 
-export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+export const ProtectedRoute = () => {
 
     const [session, setSession] = useState<any>(null);
     const [loading, setLoading] = useState(true);
@@ -25,13 +25,13 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     }, [])
 
 
-    if (loading) return <div className="p-10 text-center animate-pulse">Verificando credenciales...</div>
+    if (loading) return <div className="p-10 text-center animate-pulse font-mono uppercase text-[10px] tracking-[0.2em]">Verificando credenciales...</div>
 
     if (!session) {
         // Sino hay sesion mandamos al login
-        return <Navigate to="/admin/login" replace />
+        return <Navigate to="/login" replace />
     }
 
-    return <>{children}</>
+    return <Outlet />
 
 }

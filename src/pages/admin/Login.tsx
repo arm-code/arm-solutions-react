@@ -20,12 +20,13 @@ const Login = () => {
             password,
         });
 
+
         if (error) {
             toast.error('Error: ' + error.message);
             setLoading(false);
         } else {
             toast.success('¡Bienvenido de nuevo, Ingeniero!');
-            navigate('/log'); // O la ruta que elijas para crear logs
+            navigate('/log');
         }
     };
 
