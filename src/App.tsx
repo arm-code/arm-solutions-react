@@ -4,6 +4,7 @@ import { LogList } from "./pages/LogList"
 import LogDetail from "./pages/LogDetail"
 import Login from "./pages/admin/Login"
 import { ProtectedRoute } from "./components/auth/ProtectedRoute"
+import  NewLog from "./pages/admin/NewLog"
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
         {/* Rutas protegidas */}
         <Route element={<ProtectedRoute />}>
           {/* Todas las rutas aquí dentro requieren estar logueado */}
-          <Route path="/admin/new-log" element={<div>Formulario NewLog (Próximamente)</div>} />
+          <Route path="/admin/new-log" element={<NewLog />} />
           {/* Puedes agregar más como /admin/edit-log/:id aquí */}
         </Route>
       </Routes>
