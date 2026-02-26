@@ -1,4 +1,4 @@
-import { useLogs } from "@/hooks/useLogs"
+import { useLogs } from "@/apps/blog/hooks/useLogs"
 import { Link } from "react-router-dom";
 
 export const LogList = () => {

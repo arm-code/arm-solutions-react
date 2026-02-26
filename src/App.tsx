@@ -1,10 +1,10 @@
-import BuildingPage from "./pages/Building"
+import BuildingPage from "./apps/blog/Building"
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import { LogList } from "./pages/LogList"
-import LogDetail from "./pages/LogDetail"
-import Login from "./pages/admin/Login"
-import { ProtectedRoute } from "./components/auth/ProtectedRoute"
-import  NewLog from "./pages/admin/NewLog"
+import { LogList } from "./apps/blog/LogList"
+import LogDetail from "./apps/blog/LogDetail"
+import Login from "./apps/blog/admin/Login"
+import { ProtectedRoute } from "./shared/components/auth/ProtectedRoute"
+import  NewLog from "./apps/blog/admin/NewLog"
 
 function App() {
 

@@ -1,5 +1,5 @@
-import { supabase } from "@/lib/supabase";
-import type { LogEntry } from "@/types/database";
+import { supabase } from "@/shared/lib/supabase";
+import type { LogEntry } from "@/apps/blog/types/database";
 
 export const getEntries = async (): Promise<LogEntry[]> => {    
     const {data, error} = await supabase

@@ -1,6 +1,6 @@
 
-import { getLogBySlug } from "@/services/logService"
-import type { LogEntry } from "@/types/database"
+import { getLogBySlug } from "@/apps/blog/services/logService"
+import type { LogEntry } from "@/apps/blog/types/database"
 import { useEffect, useState } from "react"
 
 

@@ -1,4 +1,4 @@
-import { useLogBySlug } from "@/hooks/useLogBySlug"
+import { useLogBySlug } from "@/apps/blog/hooks/useLogBySlug"
 import { Link, useParams } from "react-router-dom"
 import ReactMarkdown from "react-markdown"
 
