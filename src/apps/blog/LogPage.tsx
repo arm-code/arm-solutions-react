@@ -29,7 +29,7 @@ export default function LogPage() {
 
                 <nav className="flex flex-col items-center gap-6 w-full max-w-xs">
                     <Link 
-                        to="/log" 
+                        to="/log/logs" 
                         className="flex items-center justify-center gap-3 w-full rounded-md border border-input bg-background px-8 py-4 text-[10px] font-black uppercase tracking-[0.3em] shadow-sm hover:bg-accent hover:text-accent-foreground transition-all active:scale-95"
                     >
                         <div className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />

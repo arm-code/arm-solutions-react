@@ -29,7 +29,7 @@ const LogDetail = () => {
         <div className="max-w-3xl mx-auto py-12 px-6">
 
             <nav className="mb-8">
-                <Link to="/log" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Volver a la bitacora</Link>
+                <Link to="/log/logs" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Volver a la bitacora</Link>
             </nav>
 
             <header className="space-y-4 mb-10 border-b pb-8">

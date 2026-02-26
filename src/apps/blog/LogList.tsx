@@ -18,7 +18,7 @@ export const LogList = () => {
                 <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Engineering Log</h1>
                 <div className="flex items-center justify-between">
                     <p className="text-muted-foreground">Documentación técnica y soluciones.</p>
-                    <Link to="/" className="text-sm font-medium hover:underline text-primary">Volver al inicio</Link>
+                    <Link to="/log" className="text-sm font-medium hover:underline text-primary">Volver al inicio</Link>
                 </div>
             </header>
 
