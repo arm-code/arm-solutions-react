@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '@/lib/supabase';
-import { logEntrySchema } from '@/lib/schemas'; // Importa el esquema de Zod
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea'; // Si tienes el componente Textarea de Shadcn
+import { supabase } from '@/shared/lib/supabase';
+import { logEntrySchema } from '@/apps/blog/lib/schemas'; // Importa el esquema de Zod
+import { Button } from '@/shared/components/ui/ui/button';
+import { Input } from '@/shared/components/ui/ui/input';
+import { Textarea } from '@/shared/components/ui/ui/textarea'; // Si tienes el componente Textarea de Shadcn
 import { toast } from 'sonner';
 
 
@@ -59,7 +59,7 @@ const NewLog = () => {
       setLoading(false);
     } else {
       toast.success("¡Entrada publicada con éxito!");
-      navigate('/log'); // Redirigimos a la lista para ver el resultado
+      navigate('/log/logs'); // Redirigimos a la lista para ver el resultado
     }
   };
 

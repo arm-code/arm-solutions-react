@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function BuildingPage() {
+export default function LogPage() {
     return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 antialiased">
             <main className="flex flex-col items-center text-center space-y-12">
