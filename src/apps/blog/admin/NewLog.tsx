@@ -59,7 +59,7 @@ const NewLog = () => {
       setLoading(false);
     } else {
       toast.success("¡Entrada publicada con éxito!");
-      navigate('/log'); // Redirigimos a la lista para ver el resultado
+      navigate('/log/logs'); // Redirigimos a la lista para ver el resultado
     }
   };
 

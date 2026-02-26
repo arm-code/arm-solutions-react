@@ -1,10 +1,12 @@
-import BuildingPage from "./apps/blog/Building"
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import { LogList } from "./apps/blog/LogList"
 import LogDetail from "./apps/blog/LogDetail"
 import Login from "./apps/blog/admin/Login"
 import { ProtectedRoute } from "./shared/components/auth/ProtectedRoute"
-import  NewLog from "./apps/blog/admin/NewLog"
+import NewLog from "./apps/blog/admin/NewLog"
+import LogPage from "./apps/blog/LogPage"
+import PortfolioLanding from "./apps/portfolio/PortfolioLanding"
 
 function App() {
 
@@ -12,10 +14,17 @@ function App() {
     <Router>
       <Routes>
 
-        {/* Rutas publicas */}
-        <Route path="/" element={<BuildingPage />} />
-        <Route path="/log" element={<LogList />} />
-        <Route path="/log/:slug" element={<LogDetail />} />
+        {/* SECCION DE RUTAS PARA EL PORTFOLIO */}
+        <Route path='/' element={<PortfolioLanding/>} />
+
+        {/* SECCION DE RUTAS PARA EL LOG */}
+        <Route path='/log'>
+          <Route index element={<LogPage />} />
+          <Route path='logs' element={<LogList />} />
+          <Route path=":slug" element={<LogDetail />} />
+        </Route>
+
+        {/* SECCION DE RUTAS PARA LA PARTE DE AUTENTICACION */}
         <Route path="/login" element={<Login />} />
 
         {/* Rutas protegidas */}
