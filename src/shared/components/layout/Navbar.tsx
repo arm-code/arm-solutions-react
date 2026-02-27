@@ -2,7 +2,9 @@ import { useAuth } from "@/shared/hooks/useAuth";
 import { supabase } from "@/shared/lib/supabase";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { Button } from "../ui/ui/button";
+import { Button } from "../../../components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 
 export function Navbar() {
@@ -22,7 +24,7 @@ export function Navbar() {
                     yosoyalexisromero.site
                 </Link>
 
-                <div className="flex items-center gap-6">
+                <div className="hidden md:flex items-center gap-8">
 
                     <Link to="/log" className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground">
                         Logger
@@ -55,6 +57,43 @@ export function Navbar() {
                             </Link>
                         )
                     }
+                </div>
+
+
+                <div className="md:hidden">
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="icon">
+                                <Menu className="h-5 w-5" />
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-75 bg-background">
+                            <SheetHeader>
+                                <SheetTitle className="text-left text-xs font-black uppercase tracking-[0.3em] pb-8 border-b">
+                                    Navegación
+                                </SheetTitle>
+                            </SheetHeader>
+
+                            <div className="flex flex-col gap-6 px-4">
+                                <Link to="/log" className="text-2xl font-black uppercase italic tracking-tighter hover:text-violet-600 transition-colors">
+                                    Logger
+                                </Link>
+                                <Link to="/franklin" className="text-2xl font-black uppercase italic tracking-tighter hover:text-violet-600 transition-colors">
+                                    Franklin
+                                </Link>
+
+                                <div className="h-px bg-border my-4" />
+
+                                {!session && (
+                                    <Link to="/login">
+                                        <Button className="w-full font-black uppercase tracking-widest py-6">
+                                            Login
+                                        </Button>
+                                    </Link>
+                                )}
+                            </div>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/shared/lib/supabase';
 import { logEntrySchema } from '@/apps/blog/lib/schemas'; // Importa el esquema de Zod
-import { Button } from '@/shared/components/ui/ui/button';
-import { Input } from '@/shared/components/ui/ui/input';
-import { Textarea } from '@/shared/components/ui/ui/textarea'; // Si tienes el componente Textarea de Shadcn
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea'; // Si tienes el componente Textarea de Shadcn
 import { toast } from 'sonner';
 
 
