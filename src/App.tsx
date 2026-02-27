@@ -7,6 +7,7 @@ import { ProtectedRoute } from "./shared/components/auth/ProtectedRoute"
 import NewLog from "./apps/blog/admin/NewLog"
 import LogPage from "./apps/blog/LogPage"
 import PortfolioLanding from "./apps/portfolio/PortfolioLanding"
+import FranklinApp from "./apps/franklin/FranklinApp"
 
 function App() {
 
@@ -22,6 +23,11 @@ function App() {
           <Route index element={<LogPage />} />
           <Route path='logs' element={<LogList />} />
           <Route path=":slug" element={<LogDetail />} />
+        </Route>
+        
+        <Route path='/franklin'>
+        <Route index element={ <FranklinApp/>}/>
+
         </Route>
 
         {/* SECCION DE RUTAS PARA LA PARTE DE AUTENTICACION */}

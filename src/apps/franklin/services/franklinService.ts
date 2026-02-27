@@ -1,20 +1,22 @@
-import { supabase } from '@/shared/lib/supabase';
+import { supabase } from "@/shared/lib/supabase";
+
 
 export type LogStatus = 'success' | 'fail';
 
 export interface FranklinLog {
   virtue_id: number;
-  date: string;
+  date: string; // Formato YYYY-MM-DD
   status: LogStatus;
   user_id: string;
 }
 
 export const franklinService = {
+  // Guardar o actualizar un progreso
   async saveLog(log: FranklinLog) {
     const { data, error } = await supabase
       .from('franklin_logs')
-      .upsert(log, {
-        onConflict: 'user_id, virtue_id, date',
+      .upsert(log, { 
+        onConflict: 'user_id, virtue_id, date' 
       })
       .select()
       .single();
@@ -23,6 +25,7 @@ export const franklinService = {
     return data;
   },
 
+  // Obtener logs de una virtud específica en un rango de fechas
   async getLogsByVirtue(userId: string, virtueId: number) {
     const { data, error } = await supabase
       .from('franklin_logs')
@@ -45,5 +48,5 @@ export const franklinService = {
       .eq('date', date);
 
     if (error) throw error;
-  },
+  }
 };

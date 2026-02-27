@@ -13,14 +13,14 @@ export function useFranklin(virtueId: number, userId: string | undefined) {
     try {
       setIsLoading(true);
       const data = await franklinService.getLogsByVirtue(userId, virtueId);
-      
+
       // Convertimos el array de la DB en un objeto { "2026-02-26": "success" } 
       // para acceso O(1) en la UI
       const logsMap = data.reduce((acc, log) => {
         acc[log.date] = log.status as LogStatus;
         return acc;
       }, {} as Record<string, LogStatus>);
-      
+
       setLogs(logsMap);
     } catch (error) {
       toast.error("Error al cargar el progreso");
@@ -42,14 +42,14 @@ export function useFranklin(virtueId: number, userId: string | undefined) {
     }
 
     // 1. Determinar siguiente estado
-    const nextStatus: LogStatus | 'none' = 
-      currentStatus === 'none' ? 'success' : 
-      currentStatus === 'success' ? 'fail' : 'none';
+    const nextStatus: LogStatus | 'none' =
+      currentStatus === 'none' ? 'success' :
+        currentStatus === 'success' ? 'fail' : 'none';
 
     // 2. Update Optimista: Actualizamos la UI antes de que responda el servidor
     const previousLogs = { ...logs };
     const newLogs = { ...logs };
-    
+
     if (nextStatus === 'none') {
       delete newLogs[date];
     } else {
