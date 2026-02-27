@@ -53,19 +53,12 @@ const FranklinInfo = () => {
                         Instrucciones de Uso
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <div className="space-y-2">
-                                <div className="flex items-center gap-2">
-                                    <div className="h-3 w-3 rounded-full bg-foreground" />
-                                    <span className="text-[10px] font-bold uppercase italic">Éxito (1 Clic)</span>
-                                </div>
-                                <p className="text-[11px] text-muted-foreground">Marcas que lograste mantener la virtud durante el día.</p>
-                            </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">                           
 
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2 border border-destructive/50 bg-destructive/10 px-1 rounded-sm">
                                     <span className="text-[10px] font-black text-destructive">×</span>
-                                    <span className="text-[10px] font-bold uppercase italic text-destructive">Fallo (2 Clics)</span>
+                                    <span className="text-[10px] font-bold uppercase italic text-destructive">Fallo (1 Clic)</span>
                                 </div>
                                 <p className="text-[11px] text-muted-foreground">Reconoces honestamente que fallaste en la virtud.</p>
                             </div>
@@ -73,7 +66,7 @@ const FranklinInfo = () => {
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <div className="h-3 w-3 rounded-full border-2 border-input" />
-                                    <span className="text-[10px] font-bold uppercase italic">Reset (3 Clics)</span>
+                                    <span className="text-[10px] font-bold uppercase italic">Reset (1 Clic)</span>
                                 </div>
                                 <p className="text-[11px] text-muted-foreground">Limpia el registro del día seleccionado.</p>
                             </div>

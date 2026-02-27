@@ -1,8 +1,10 @@
+import type { LogStatus } from "../services/franklinService";
+
 interface TrackerGridProps {
   days: string[];
   logs: Record<string, 'none' | 'fail' | undefined>;
   today: string;
-  onToggle: (date: string, current:  'fail' | 'none') => void;
+  onToggle: (date: string, current:  LogStatus) => void;
   isLoading: boolean;
 }
 
@@ -40,10 +42,7 @@ export function TrackerGrid({ days, logs, today, onToggle, isLoading }: TrackerG
                 /* Anillo de "Hoy" más sutil en móvil */
                 ${isToday && status === 'none' ? 'ring-2 ring-violet-500/20 border-violet-500/40' : ''}
               `}
-            >
-              {/* {status === 'success' && (
-                <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-current animate-in zoom-in duration-300" />
-              )} */}
+            >              
               {status === 'fail' && (
                 <span className="text-[10px] sm:text-xs font-black italic">×</span>
               )}

@@ -42,7 +42,7 @@ export function useFranklin(virtueId: number, userId: string | undefined) {
     }
 
     // 1. Determinar siguiente estado
-    const nextStatus: LogStatus | 'none' = currentStatus === 'none' ? 'fail' : currentStatus === 'fail' ? 'none' : 'fail';
+    const nextStatus: LogStatus  = currentStatus === 'none' ? 'fail' : 'none'
 
     // 2. Update Optimista: Actualizamos la UI antes de que responda el servidor
     const previousLogs = { ...logs };
