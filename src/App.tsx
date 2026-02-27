@@ -8,38 +8,43 @@ import NewLog from "./apps/blog/admin/NewLog"
 import LogPage from "./apps/blog/LogPage"
 import PortfolioLanding from "./apps/portfolio/PortfolioLanding"
 import FranklinApp from "./apps/franklin/FranklinApp"
+import { Navbar } from "./shared/components/layout/Navbar"
 
 function App() {
 
   return (
     <Router>
-      <Routes>
+      <Navbar />
+      <div className="pt-16">
 
-        {/* SECCION DE RUTAS PARA EL PORTFOLIO */}
-        <Route path='/' element={<PortfolioLanding/>} />
+        <Routes>
 
-        {/* SECCION DE RUTAS PARA EL LOG */}
-        <Route path='/log'>
-          <Route index element={<LogPage />} />
-          <Route path='logs' element={<LogList />} />
-          <Route path=":slug" element={<LogDetail />} />
-        </Route>
-        
-        <Route path='/franklin'>
-        <Route index element={ <FranklinApp/>}/>
+          {/* SECCION DE RUTAS PARA EL PORTFOLIO */}
+          <Route path='/' element={<PortfolioLanding />} />
 
-        </Route>
+          {/* SECCION DE RUTAS PARA EL LOG */}
+          <Route path='/log'>
+            <Route index element={<LogPage />} />
+            <Route path='logs' element={<LogList />} />
+            <Route path=":slug" element={<LogDetail />} />
+          </Route>
 
-        {/* SECCION DE RUTAS PARA LA PARTE DE AUTENTICACION */}
-        <Route path="/login" element={<Login />} />
+          <Route path='/franklin'>
+            <Route index element={<FranklinApp />} />
 
-        {/* Rutas protegidas */}
-        <Route element={<ProtectedRoute />}>
-          {/* Todas las rutas aquí dentro requieren estar logueado */}
-          <Route path="/admin/new-log" element={<NewLog />} />
-          {/* Puedes agregar más como /admin/edit-log/:id aquí */}
-        </Route>
-      </Routes>
+          </Route>
+
+          {/* SECCION DE RUTAS PARA LA PARTE DE AUTENTICACION */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Rutas protegidas */}
+          <Route element={<ProtectedRoute />}>
+            {/* Todas las rutas aquí dentro requieren estar logueado */}
+            <Route path="/admin/new-log" element={<NewLog />} />
+            {/* Puedes agregar más como /admin/edit-log/:id aquí */}
+          </Route>
+        </Routes>
+      </div>
     </Router>
   )
 }
