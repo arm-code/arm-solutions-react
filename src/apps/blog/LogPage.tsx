@@ -21,7 +21,7 @@ export default function LogPage() {
                             Senior Software Architect <span className="text-muted-foreground/50 font-medium">(In Training)</span>
                         </p>
 
-                        <p className="text-sm italic text-muted-foreground max-w-[500px] mx-auto leading-relaxed border-t border-border pt-4">
+                        <p className="text-sm italic text-muted-foreground max-w-125 mx-auto leading-relaxed border-t border-border pt-4">
                             "La inteligencia sin disciplina solo es arrogancia decorativa"
                         </p>
                     </div>

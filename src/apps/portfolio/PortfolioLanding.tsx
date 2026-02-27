@@ -1,7 +1,5 @@
 
 
-// todo: mover esto al backend
-
 import ProjectCard from "./components/ProjectCard"
 
 const PROJECTS = [
@@ -27,11 +25,13 @@ const PortfolioLanding = () => {
 
                 <header className="space-y-8">
                     <div className="space-y-2">
-                        <h1 className="text-6xl font-black tracking-tighter sm:text-8xl lg:text-9xl italic leading-none">The Porfolio</h1>
+                        <h1 className="text-6xl font-black tracking-tighter sm:text-8xl lg:text-9xl italic leading-none">The Portfolio</h1>
                         <p className="text-xs font-black uppercase tracking-[0.4em] text-violet-600/80">Technical Engineering Hub</p>
                     </div>
 
                     <div className="space-y-4">
+                        <p className="text-sm text-muted-foreground max-w-150 mb-0">By
+                        </p>
                         <p className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl uppercase">Alexis Romero Mendoza</p>
                         <p className="text-sm italic text-muted-foreground max-w-150 mx-auto leading-relaxed border-t pt-6">"La excelencia no es un acto, sino un hábito. La ingeniería es el arte de sistematizar ese hábito."
                         </p>
