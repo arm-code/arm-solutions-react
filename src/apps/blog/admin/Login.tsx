@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { supabase } from '@/shared/lib/supabase';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Button } from '@/shared/components/ui/ui/button';
-import { Input } from '@/shared/components/ui/ui/input';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
 const Login = () => {

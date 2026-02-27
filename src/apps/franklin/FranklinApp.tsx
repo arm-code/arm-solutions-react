@@ -3,6 +3,7 @@ import { useCurrentVirtue } from "./hooks/useCurrentVirtue";
 import { useFranklin } from "./hooks/useFranklin";
 import { getWeekDays } from "./utils/dateUtils";
 import { TrackerGrid } from "./components/TrackerGrid";
+import FranklinInfo from "./components/FranklinInfo";
 
 export default function FranklinApp() {
   const { user, loading: authLoading } = useAuth();
@@ -40,6 +41,8 @@ export default function FranklinApp() {
             Modo lectura: Inicia sesión para guardar cambios
           </p>
         )}
+
+        <FranklinInfo/>
       </main>
     </div>
   );

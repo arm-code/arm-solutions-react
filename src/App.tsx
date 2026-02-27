@@ -39,9 +39,9 @@ function App() {
 
           {/* Rutas protegidas */}
           <Route element={<ProtectedRoute />}>
-            {/* Todas las rutas aquí dentro requieren estar logueado */}
-            <Route path="/admin/new-log" element={<NewLog />} />
+            {/* Todas las rutas aquí dentro requieren estar logueado */}            
             {/* Puedes agregar más como /admin/edit-log/:id aquí */}
+            <Route path="/admin/new-log" element={<NewLog />} />
           </Route>
         </Routes>
       </div>
