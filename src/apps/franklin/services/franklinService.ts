@@ -1,7 +1,7 @@
 import { supabase } from "@/shared/lib/supabase";
 
 
-export type LogStatus = 'success' | 'fail';
+export type LogStatus = 'none' | 'fail';
 
 export interface FranklinLog {
   virtue_id: number;

@@ -1,8 +1,8 @@
 interface TrackerGridProps {
   days: string[];
-  logs: Record<string, 'success' | 'fail' | undefined>;
+  logs: Record<string, 'none' | 'fail' | undefined>;
   today: string;
-  onToggle: (date: string, current: 'success' | 'fail' | 'none') => void;
+  onToggle: (date: string, current:  'fail' | 'none') => void;
   isLoading: boolean;
 }
 
@@ -35,15 +35,15 @@ export function TrackerGrid({ days, logs, today, onToggle, isLoading }: TrackerG
                 rounded-full transition-all duration-200 active:scale-90
                 flex items-center justify-center border-2
                 ${status === 'none' ? 'border-input hover:border-foreground/20' : ''}
-                ${status === 'success' ? 'bg-foreground border-foreground text-background' : ''}
+                
                 ${status === 'fail' ? 'border-destructive/50 bg-destructive/10 text-destructive' : ''}
                 /* Anillo de "Hoy" más sutil en móvil */
                 ${isToday && status === 'none' ? 'ring-2 ring-violet-500/20 border-violet-500/40' : ''}
               `}
             >
-              {status === 'success' && (
+              {/* {status === 'success' && (
                 <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-current animate-in zoom-in duration-300" />
-              )}
+              )} */}
               {status === 'fail' && (
                 <span className="text-[10px] sm:text-xs font-black italic">×</span>
               )}
