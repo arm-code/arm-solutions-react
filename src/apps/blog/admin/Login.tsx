@@ -13,8 +13,13 @@ const Login = () => {
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/'
+    console.log(location)
+
+
 
     const handleLogin = async (e: React.FormEvent) => {
+
+        console.log(from)
         e.preventDefault();
         setLoading(true);
 
