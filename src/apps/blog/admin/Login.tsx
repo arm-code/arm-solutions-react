@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '@/shared/lib/supabase';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/shared/components/ui/ui/button';
 import { Input } from '@/shared/components/ui/ui/input';
 import { toast } from 'sonner';
@@ -10,6 +10,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,13 +23,12 @@ const Login = () => {
             password,
         });
 
-
         if (error) {
             toast.error('Error: ' + error.message);
             setLoading(false);
         } else {
             toast.success('¡Bienvenido de nuevo, Ingeniero!');
-            navigate('/log');
+            navigate(from, { replace: true });
         }
     };
 
