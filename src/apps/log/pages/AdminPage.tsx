@@ -1,6 +1,6 @@
 export const AdminPage = () => {
     return (
-        <div>
+        <div className="mt-40">
             <h1>Admin Page</h1>
         </div>
     )

@@ -1,9 +1,10 @@
-import { AdminPage } from "@/apps/log/admin/AdminPage";
-import LogPage from "@/apps/log/LogPage";
+import { AdminPage } from "@/apps/log/pages/AdminPage";
 import FranklinApp from "@/apps/franklin/FranklinApp";
 import PortfolioPage from "@/apps/portfolio/PortfolioPage";
 import { Navbar } from "@/shared/components/layout/Navbar";
 import { createBrowserRouter } from "react-router-dom";
+import LogPage from "@/apps/log/LogPage";
+import { LogListPage } from "@/apps/log/pages/LogListPage";
 
 
 export const appRouter = createBrowserRouter([
@@ -15,18 +16,6 @@ export const appRouter = createBrowserRouter([
                 index: true,
                 element: <PortfolioPage />,
             },
-            {
-                path: 'log',
-                element: <LogPage />,
-            },
-            {
-                path: 'franklin',
-                element: <FranklinApp />,
-            },
-            {
-                path: 'admin',
-                element: <AdminPage />,
-            }
         ]
 
     },
@@ -39,15 +28,31 @@ export const appRouter = createBrowserRouter([
                 element: <LogPage />,
             },
             {
-                path: 'log',
-                element: <LogPage />,
-            },
+                path: 'logs',
+                element: <LogListPage />,
+            }
+        ]
+
+    },
+
+    {
+        path: '/franklin',
+        element: <Navbar />,
+        children: [
             {
-                path: 'franklin',
+                index: true,
                 element: <FranklinApp />,
-            },
+            }
+        ]
+
+    },
+
+    {
+        path: '/admin',
+        element: <Navbar />,
+        children: [
             {
-                path: 'admin',
+                index: true,
                 element: <AdminPage />,
             }
         ]
