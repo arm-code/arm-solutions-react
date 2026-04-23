@@ -1,7 +1,7 @@
-import { useLogs } from "@/apps/blog/hooks/useLogs"
+import { useLogs } from "@/apps/log/hooks/useLogs"
 import { Link } from "react-router-dom";
 
-export const LogList = () => {
+export const LogListPage = () => {
     const { logs, loading } = useLogs();
 
     if (loading) {
@@ -42,8 +42,8 @@ export const LogList = () => {
                             {log.content.replace(/\\n/g, ' ')}
                         </p>
 
-                        <Link 
-                            to={`/log/${log.slug}`} 
+                        <Link
+                            to={`/log/${log.slug}`}
                             className="text-sm font-bold uppercase tracking-widest hover:underline"
                         >
                             Leer solución →

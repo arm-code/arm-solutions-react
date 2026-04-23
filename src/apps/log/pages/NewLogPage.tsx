@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/shared/lib/supabase';
-import { logEntrySchema } from '@/apps/blog/lib/schemas'; // Importa el esquema de Zod
+import { logEntrySchema } from '@/apps/log/lib/schemas'; // Importa el esquema de Zod
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea'; // Si tienes el componente Textarea de Shadcn
@@ -21,7 +21,7 @@ const createSlug = (text: string) => {
 const NewLog = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  
+
   // Estados del formulario
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState<'Frontend' | 'Backend' | 'DevOps' | 'Database'>('Backend');
@@ -36,7 +36,7 @@ const NewLog = () => {
       category,
       content,
       slug: createSlug(title),
-      tags: [] 
+      tags: []
     };
 
     // Capa de Validación con Zod
@@ -73,7 +73,7 @@ const NewLog = () => {
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="space-y-2">
           <label className="text-xs font-black uppercase tracking-widest text-violet-600">Título del Problema</label>
-          <Input 
+          <Input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Ej: Error de hidratación en Next.js"
@@ -83,7 +83,7 @@ const NewLog = () => {
 
         <div className="space-y-2">
           <label className="text-xs font-black uppercase tracking-widest text-violet-600">Categoría</label>
-          <select 
+          <select
             value={category}
             onChange={(e) => setCategory(e.target.value as any)}
             className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring"
@@ -97,7 +97,7 @@ const NewLog = () => {
 
         <div className="space-y-2">
           <label className="text-xs font-black uppercase tracking-widest text-violet-600">Contenido (Markdown)</label>
-          <Textarea 
+          <Textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Diagnóstico, causa raíz y solución..."
@@ -105,8 +105,8 @@ const NewLog = () => {
           />
         </div>
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-violet-600 hover:bg-violet-700 font-bold uppercase tracking-[0.2em] py-6"
           disabled={loading}
         >

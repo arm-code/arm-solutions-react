@@ -1,6 +1,6 @@
 
-import { getLogBySlug } from "@/apps/blog/services/logService"
-import type { LogEntry } from "@/apps/blog/types/database"
+import { getLogBySlug } from "@/apps/log/services/logService"
+import type { LogEntry } from "@/apps/log/types/database"
 import { useEffect, useState } from "react"
 
 
@@ -11,8 +11,8 @@ export const useLogBySlug = (slug: string) => {
 
     useEffect(() => {
 
-        if(!slug) return;
-        
+        if (!slug) return;
+
         const fetchLog = async () => {
             setLoading(true)
             const data = await getLogBySlug(slug)
@@ -25,5 +25,5 @@ export const useLogBySlug = (slug: string) => {
     }, [slug])
 
     return { log, loading }
-    
+
 }

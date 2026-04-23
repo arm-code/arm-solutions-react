@@ -1,5 +1,5 @@
-import { getEntries } from "@/apps/blog/services/logService"
-import type { LogEntry } from "@/apps/blog/types/database"
+import { getEntries } from "@/apps/log/services/logService"
+import type { LogEntry } from "@/apps/log/types/database"
 import { useEffect, useState } from "react"
 
 

@@ -1,14 +1,14 @@
-import { useLogBySlug } from "@/apps/blog/hooks/useLogBySlug"
+import { useLogBySlug } from "@/apps/log/hooks/useLogBySlug"
 import { Link, useParams } from "react-router-dom"
 import ReactMarkdown from "react-markdown"
 
 
-const LogDetail = () => {
+const LogDetailPage = () => {
 
     const { slug } = useParams<{ slug: string }>()
     const { log, loading } = useLogBySlug(slug || '')
 
-    if( loading ){
+    if (loading) {
         return (
             <div className="p-10 text-center animate-pulse">
                 Cargando detalle...
@@ -16,7 +16,7 @@ const LogDetail = () => {
         )
     }
 
-    if(!log) {
+    if (!log) {
         return (
             <div className="p-10 text-center">
                 Log no encontrado.
@@ -35,15 +35,15 @@ const LogDetail = () => {
             <header className="space-y-4 mb-10 border-b pb-8">
                 <div className="flex gap-2">
                     <span className=" inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                        { log.category }
-                        </span>
+                        {log.category}
+                    </span>
                 </div>
-                <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">{ log.title }</h1>
-                <p className="text-sm text-muted-foreground">Publicado el { new Date(log.created_at).toLocaleDateString() }</p>
+                <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">{log.title}</h1>
+                <p className="text-sm text-muted-foreground">Publicado el {new Date(log.created_at).toLocaleDateString()}</p>
             </header>
 
             <article className="prose prose-stone max-w-none">
-                <ReactMarkdown>{ log.content }</ReactMarkdown>
+                <ReactMarkdown>{log.content}</ReactMarkdown>
             </article>
 
             <footer className="mt-12 pt-8 border-t">
@@ -58,4 +58,4 @@ const LogDetail = () => {
     )
 }
 
-export default LogDetail
+export default LogDetailPage

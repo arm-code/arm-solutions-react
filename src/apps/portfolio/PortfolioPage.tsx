@@ -18,7 +18,7 @@ const PROJECTS = [
         status: "building" as const
     }
 ]
-const PortfolioLanding = () => {
+const PortfolioPage = () => {
     return (
         <div className="flex min-h-screen flex-col items-center justify-start bg-background px-6 pt-24 pb-20 antialiased selection:bg-violet-500/30">
             <main className="flex flex-col items-center text-center space-y-16 w-full max-w-5xl">
@@ -64,4 +64,4 @@ const PortfolioLanding = () => {
     )
 }
 
-export default PortfolioLanding
+export default PortfolioPage

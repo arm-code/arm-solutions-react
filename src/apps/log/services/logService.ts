@@ -1,18 +1,18 @@
 import { supabase } from "@/shared/lib/supabase";
-import type { LogEntry } from "@/apps/blog/types/database";
+import type { LogEntry } from "@/apps/log/types/database";
 
-export const getEntries = async (): Promise<LogEntry[]> => {    
-    const {data, error} = await supabase
+export const getEntries = async (): Promise<LogEntry[]> => {
+  const { data, error } = await supabase
     .from('log_entries')
     .select('*')
-    .order('created_at', {ascending: false})
+    .order('created_at', { ascending: false })
 
-    if(error){
-        console.error('Error al obtener logs: ', error.message);
-        return [];
-    }
+  if (error) {
+    console.error('Error al obtener logs: ', error.message);
+    return [];
+  }
 
-    return data as LogEntry[];
+  return data as LogEntry[];
 }
 
 export const getLogBySlug = async (slug: string): Promise<LogEntry | null> => {
